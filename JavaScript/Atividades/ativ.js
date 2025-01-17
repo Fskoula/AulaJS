@@ -94,10 +94,10 @@ function calcular() {
 
 //Execício 4 - verificar se o usuário dormiu suficiente
 function sonoUsuario () {
-    const horas = 8;
+    const horasMinimaSono = 8;
 
     let horasDormidas = parseInt(prompt("Informe quantas horas você dormiu esta noite:"));
-    if (horasDormidas >= horas) {
+    if (horasDormidas >= horasMinimaSono) {
         alert("Parabéns! Você teve uma boa noite de sono.");
     } else {
         alert("Você não dormiu o suficiente, melhore!");
