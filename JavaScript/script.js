@@ -1,0 +1,1 @@
+alert("Promoção do dia! 50% de desconto em todos os produtos.");
