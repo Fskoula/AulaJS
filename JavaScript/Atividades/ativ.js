@@ -74,6 +74,9 @@ function limpar() {
     operacao = "";
 }
 
+//aqui usamos muito else if, mas como a variálvel é a mesma 
+//só muda o valor, é melhor usar switch.
+//o else if é mais usado quando muda a variável e o valor
 function calcular() {
     valor1 = parseFloat(valor1);
     valor2 = parseFloat(valor2);
@@ -89,6 +92,29 @@ function calcular() {
         resultado = valor1 / valor2;
     }
 
+    alert("Resultado: " + resultado);
+    limpar();
+}
+
+//Exemplo do switch
+function calcularComSwitch() {
+    valor1 = parseFloat(valor1);
+    valor2 = parseFloat(valor2);
+    let resultado;
+    switch (operacao) {
+        case "+":
+            resultado = valor1 + valor2;
+            break;
+        case "-":
+            resultado = valor1 - valor2;
+            break;
+        case "*":
+            resultado = valor1 * valor2;
+            break;
+        case "/":
+            resultado = valor1 / valor2;
+            break;
+    }
     alert("Resultado: " + resultado);
     limpar();
 }
@@ -179,3 +205,88 @@ function identificarNomeUsuario() {
         alert("Entrada liberada!");
     }
 }
+//Exercício 9- IMC(Indice de Massa Corporal)
+function getIndiceCorporal() {
+    const pesoUsuario = prompt("Qual seu peso?");
+    let alturaUsuario = prompt("Qual sua altura?");
+
+    //Verificar se esta em centimetros e converter para metros
+    if (alturaUsuario.indexOf(".") == -1 && alturaUsuario.length > 1) {
+        alturaUsuario = alturaUsuario / 100;
+    }
+    const valorIMC = pesoUsuario / (alturaUsuario * alturaUsuario);
+    
+    if (valorIMC <= 18.5) {
+        alert("Você esta abaixo do peso.");
+    } else if (valorIMC > 18.5 && valorIMC <= 25) {
+        alert("Você esta no peso ideal.");
+    } else if (valorIMC > 25 && valorIMC <= 30) {
+        alert("Você esta acima do peso.");
+    } else {
+        alert("Você esta obeso(a)");
+    }
+}
+
+//Exercício 10 - Switch - converter dias da semana em números
+function diaDaSemana() {
+    const DOMINGO = 1, SEGUNDA = 2, TERCA = 3, QUARTA = 4, QUINTA = 5, SEXTA = 6, SABADO = 7;
+    getDiaUsuario = parseInt(prompt ("Descubra que dia da semana é. Coloque um número de 1 a 7:"));
+
+    switch (getDiaUsuario) {
+        case DOMINGO:
+            alert("Hoje é Domingo");
+            break;
+        case SEGUNDA:
+            alert("Hoje é Segunda-feira");
+            break;
+        case TERCA:
+            alert("Hoje é Terça-feira");
+            break;
+        case QUARTA:
+            alert("Hoje é Quarta-feira");
+            break;
+        case QUINTA:
+            alert("Hoje é Quinta-feira");
+            break;
+        case SEXTA:
+            alert("Hoje é Sexta-feira");
+            break;
+        case SABADO:
+            alert("Hoje é Sábado");
+            break;
+        default:
+            alert("Dia invalido");
+    }
+}
+
+//Exercício 11 - Calcular valor compra 
+
+function valorCompraUsuario() {
+    let valorTotalCompra = parseFloat(prompt ("Qual o valor total da sua compra?"));
+    let cupomDesconto = prompt ("Caso tenha, insira o cupom de desconto:");
+    let formaPagamente = prompt ("Qual sera a forma de pagamento? Digite: Pix - 1 | Cartão de Débito - 2 | Cartão de Crédito - 3 | Boleto - 4");
+    let freteCompra = prompt ("Como você quer fazer o frete? Digite: Padrão - 1 | Expresso - 2");
+    const PIX = 1, CARTAODEBITO = 2, CARTAOCREDITO = 3, BOLETO = 4, FRETEPADRAO = 1, FRETEEXPRESSO = 2;
+
+    switch (formaPagamente) {
+        case  PIX:
+            (10 * valorTotalCompra) / 100;
+            break;
+        case CARTAODEBITO:
+            (5 * valorTotalCompra) / 100;          
+            break;
+        case CARTAOCREDITO:
+            valorTotalCompra = valorTotalCompra + (valorTotalCompra * 0.02);
+            break;
+        case BOLETO:
+            valorTotalCompra 
+            break;    
+    }
+}
+
+function calcularPrecoProduto(preco) {
+    const preco = parseFloat(prompt("Informe o valor da sua compra:"));
+    let valorTotal = calcularFormaPagamento(preco);
+}
+
+function
