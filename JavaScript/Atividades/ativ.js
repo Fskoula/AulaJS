@@ -187,7 +187,7 @@ function verificarEntradaMelhorada() {
 //Exercício 7 - verificar meia entrada
 function verificarMeiaEntrada() {
     const idadeUsuario = prompt("Informe sua idade:");
-    if ( idadeUsuario <= 12 || idadeUsuario >= 60) {
+    if (idadeUsuario <= 12 || idadeUsuario >= 60) {
         alert("Você tem direito a meia-entrada.");
     } else {
         alert("Você paga a entrada inteira.");
@@ -215,7 +215,7 @@ function getIndiceCorporal() {
         alturaUsuario = alturaUsuario / 100;
     }
     const valorIMC = pesoUsuario / (alturaUsuario * alturaUsuario);
-    
+
     if (valorIMC <= 18.5) {
         alert("Você esta abaixo do peso.");
     } else if (valorIMC > 18.5 && valorIMC <= 25) {
@@ -230,7 +230,7 @@ function getIndiceCorporal() {
 //Exercício 10 - Switch - converter dias da semana em números
 function diaDaSemana() {
     const DOMINGO = 1, SEGUNDA = 2, TERCA = 3, QUARTA = 4, QUINTA = 5, SEXTA = 6, SABADO = 7;
-    getDiaUsuario = parseInt(prompt ("Descubra que dia da semana é. Coloque um número de 1 a 7:"));
+    getDiaUsuario = parseInt(prompt("Descubra que dia da semana é. Coloque um número de 1 a 7:"));
 
     switch (getDiaUsuario) {
         case DOMINGO:
@@ -260,33 +260,116 @@ function diaDaSemana() {
 }
 
 //Exercício 11 - Calcular valor compra 
-
-function valorCompraUsuario() {
-    let valorTotalCompra = parseFloat(prompt ("Qual o valor total da sua compra?"));
-    let cupomDesconto = prompt ("Caso tenha, insira o cupom de desconto:");
-    let formaPagamente = prompt ("Qual sera a forma de pagamento? Digite: Pix - 1 | Cartão de Débito - 2 | Cartão de Crédito - 3 | Boleto - 4");
-    let freteCompra = prompt ("Como você quer fazer o frete? Digite: Padrão - 1 | Expresso - 2");
-    const PIX = 1, CARTAODEBITO = 2, CARTAOCREDITO = 3, BOLETO = 4, FRETEPADRAO = 1, FRETEEXPRESSO = 2;
-
-    switch (formaPagamente) {
-        case  PIX:
-            (10 * valorTotalCompra) / 100;
-            break;
-        case CARTAODEBITO:
-            (5 * valorTotalCompra) / 100;          
-            break;
-        case CARTAOCREDITO:
-            valorTotalCompra = valorTotalCompra + (valorTotalCompra * 0.02);
-            break;
+function calcularValorTotal() {
+    const valorProduto = parseFloat(prompt("Informe o valor total da sua compra"));
+    //calcular valor da forma de pagamento
+    let total = valorProduto + calcularFormaPgto(valorProduto);
+    console.log("Total com forma de pagamento: " + total);
+    //calcular valor do desconto(se houver)
+    total -= calcularDesconto(valorProduto);
+    console.log("Total com cupom: " + total);
+    //calcular valor do frete
+    total += calcularFrete();
+    alert("Total a pagar: R$ " + total);
+}
+//esse vlProduto é o valorProduto, ele pode ser passado com acrécimo e tals por isso o nome diferente. Mas podia ser igual
+function calcularFormaPgto(vlProduto) {
+    const formaPgto = parseInt(prompt("Informe a forma de paganto \n1 - Cartão de Débito\n2 - Pix\n3 - Cartão de Crédito\n4 - Boleto"));
+    const CARTAODEB = 1, PIX = 2, CARTAOCRED = 3, BOLETO = 4;
+    switch (formaPgto) {
+        case CARTAODEB:
+            return -(vlProduto * 0.05);
+        case PIX:
+            return -(vlProduto * 0.1);
+        case CARTAOCRED:
+            return vlProduto * 0.02;
         case BOLETO:
-            valorTotalCompra 
-            break;    
+            return 0;
     }
 }
 
-function calcularPrecoProduto(preco) {
-    const preco = parseFloat(prompt("Informe o valor da sua compra:"));
-    let valorTotal = calcularFormaPagamento(preco);
+function calcularDesconto(vlProduto) {
+    const cupom = prompt("Você tem algum cupom de desconto? Se sim, digite-o.");
+    let valorCupom = cupom.substring(0, 2);
+    if (verificarCupomValido(valorCupom)) {
+        //aplicar desconto
+        return vlProduto * (valorCupom / 100);
+    }
+    return 0;
+}
+//verificando se é um numero.
+//isNaN (é 'não é um numero') - !isNaN (não é 'não é um numero')
+function verificarCupomValido(valorCupom) {
+    return !isNaN(valorCupom);
+}
+function calcularFrete() {
+    const tipoFrete = parseInt(prompt("Escolha o tipo de frete:\n1- Padrão\n2-Expresso"));
+    const FRETEPADRAO = 1, FRETEESPRESSO = 2;
+    switch (tipoFrete) {
+        case FRETEPADRAO:
+            return 10;
+        case FRETEESPRESSO:
+            return 20;
+    }
+    return 0;
 }
 
-function
+//Exercício LOOPS - FOR e WHILE
+function contarDezFor() {
+    for (let conta = 1; conta <= 10; conta++) {
+        console.log(conta);
+    }
+}
+
+function contarDezWhile() {
+    let contagem = 1;
+    while (contagem <= 10) {
+        console.log(contagem);
+        contagem++;
+    }
+}
+
+//Decrescente 10 até 0
+function contarZeroFor() {
+    for (let conta = 10; conta > 0; conta--) {
+        console.log(conta);
+    }
+}
+
+function contarZeroWhile() {
+    let contagem = 10;
+    while (contagem > 0) {
+        console.log(contagem);
+        contagem--;
+    }
+}
+
+//Só pares
+function contarParFor() {
+    for (let conta = 0; conta <= 10; conta += 2) {
+        console.log(conta);
+    }
+}
+
+function contarParWhile() {
+    let contagem = 0;
+    while (contagem <= 10) {
+        console.log(contagem);
+        contagem += 2;
+    }
+}
+
+//Só ímpares
+function contarImparFor() {
+    for (let conta = 1; conta <= 10; conta += 2) {
+        console.log(conta);
+    }
+}
+
+function contarImparWhile() {
+    let contagem = 1;
+    while (contagem <= 10) {
+        console.log(contagem);
+        contagem += 2;
+    }
+}
