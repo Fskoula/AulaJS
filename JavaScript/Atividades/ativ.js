@@ -11,7 +11,7 @@ function exibirMensage() {
 
 //Exercício 3- criar uma calculadora
 //OPERADORES (+ - * /)
-//FUNCTIOM é uum método -sempre ter o nome do que vai fazer
+//FUNCTIOM é um método -sempre ter o nome do que vai fazer
 
 function realizarCalculo() {
     //let é uma variável para dentro da função
@@ -48,7 +48,7 @@ function multiplicar(valor1, valor2) {
     console.log("O resultado da multiplicação entre " + valor1 + " e " + valor2 + " é: " + resultado);
 }
 
-//Calcular "funcional"
+//Calculadora "funcional"
 var valor1 = "";
 var valor2 = "";
 var operacao = "";
@@ -140,25 +140,6 @@ function idtHoraFormato12() {
     }
 }
 
-//Testando operadores OU|| / E&&
-function testandoOperadorOu() {
-    const nro = prompt("Informe um digite");
-    if (nro == 5 || nro == 10) {
-        alert("O número é 5 ou 10");
-    } else {
-        alert("Outro número");
-    }
-}
-
-function testandoOperadorE() {
-    const idade = prompt("Informe sua idade:");
-    const idadeAmigo = prompt("Informe a idade do seu amigo:");
-    if (idade >= 18 && idadeAmigo >= 18) {
-        alert("Vocês estão liberados para entrar");
-    } else {
-        alert("Infelizmente você não estão liberados");
-    }
-}
 
 //Exercício 6 - verificar idade, ingresso ou lista
 function verificarEntradaBalada() {
@@ -314,7 +295,7 @@ function calcularFrete() {
     return 0;
 }
 
-//Exercício LOOPS - FOR e WHILE
+//Exercício 12 LOOPS - FOR e WHILE
 function contarDezFor() {
     for (let conta = 1; conta <= 10; conta++) {
         console.log(conta);
@@ -371,5 +352,49 @@ function contarImparWhile() {
     while (contagem <= 10) {
         console.log(contagem);
         contagem += 2;
+    }
+}
+
+//Exercício 13 - dizer uma nota de 0 a 10
+function pedirNota() {
+    let nota;
+    while (true) {
+        nota = parseInt(prompt("Informe uma nota:"));
+        if (nota > 10 || nota < 0) {
+            alert("Nota errada, coloque uma nota entre 0 e 10");
+        } else {
+            break;
+        }
+    }
+    alert("Nota valida!");
+}
+
+//Exercício 14 - Crie uma senha e faça o usuario dizer certo
+function fazerLogin() {
+    const senhaUsuario = "Fernanda", senhaNumeros = "12358";
+    let usuario, senha;
+    while (true) {
+        usuario = prompt("Digite o usuario:");
+        senha = prompt("Digite senha:");
+        if (usuario != senhaUsuario || senha != senhaNumeros) {
+           alert("Usuario ou senha invalidos.");
+        } else {
+            break;
+        }
+    }
+    alert("Liberado");
+}
+
+//Exercício 15 - Envie palavras (Ignorar palavras com menos de 3 caracters e dizer o porque, 
+//parar quando a palavra for "sair")
+
+function solicitarPalavra() {
+    let palavraUsuario;
+    while (palavraUsuario != "sair") {
+        palavraUsuario = prompt("Escreva uma palavra:");
+        if (palavraUsuario.length < 4) {
+            alert(palavraUsuario+" esta fora dos padões esperados.");
+            continue;
+        } 
     }
 }
