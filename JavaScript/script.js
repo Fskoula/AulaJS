@@ -53,4 +53,12 @@ function whileBreakEContinue() {
 }
 
 //Array - é uma lista
+//solicitar 10 números para o usuario e colocar em lista
 
+function solicitarNumero() {
+    let arrayList = [];
+    for(let i = 0; i < 10; i++) {
+        arrayList.push(prompt("Digite um número para lista"));
+    }
+   console.log(arrayList);
+}

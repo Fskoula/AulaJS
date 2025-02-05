@@ -377,7 +377,7 @@ function fazerLogin() {
         usuario = prompt("Digite o usuario:");
         senha = prompt("Digite senha:");
         if (usuario != senhaUsuario || senha != senhaNumeros) {
-           alert("Usuario ou senha invalidos.");
+            alert("Usuario ou senha invalidos.");
         } else {
             break;
         }
@@ -393,8 +393,57 @@ function solicitarPalavra() {
     while (palavraUsuario != "sair") {
         palavraUsuario = prompt("Escreva uma palavra:");
         if (palavraUsuario.length < 4) {
-            alert(palavraUsuario+" esta fora dos padões esperados.");
+            alert(palavraUsuario + " esta fora dos padões esperados.");
             continue;
-        } 
+        }
     }
 }
+
+//Exercício 16 - ARRAY
+//colocar nome a lista vip
+
+function listaVip() {
+    let nomeUsuario = [];
+    for (let i = 0; i < 10; i++) {
+        nomeUsuario.push(prompt("Nome completo"));
+    }
+    console.log(nomeUsuario);
+}
+
+//Exercício 17 - ARRAY
+//validar usuario e senha
+
+function realizarLoginUsuarios() {
+    const usuarios = ["@Fskoula", "Ana_Paula", "Gaby125"];
+    const senhas = ["fe1996", "aninha", "Gabriela125"];
+    let usuarioLogin = prompt("Digite seu usuário");
+    let senhaLogin = prompt("Digite sua senha");
+    let fezLogin = false;
+
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i] == usuarioLogin && senhas[i] == senhaLogin) {
+            fezLogin = true;
+            alert("Login realizado");
+            break;
+        }
+    }
+    if (!fezLogin) {
+        alert("Login inválido");
+    }
+}
+
+//Exercício 18 -contar as letras na palavras
+//usando alert e console.log
+function contarLetras() {
+    const palavras = ["gato", "cachorro", "elefante", "arara"];
+    palavras.forEach(letras => {
+        console.log("A palavra " + letras + " tem " + letras.length + " letras.");
+        alert("A palavra " + letras + " tem " + letras.length + " letras.");
+    })
+}
+
+//para usar só o console.log ou alert
+//function contarLetras() {
+//   const palavras = ["gato", "cachorro", "elefante", "arara"];
+//    palavras.forEach(letras => console.log("A palavra " + letras + " tem " + letras.length + " letras."));
+//}
