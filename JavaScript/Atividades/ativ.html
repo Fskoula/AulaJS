@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade</title>
     <script src="ativ.js"></script>
 </head>
+
 <body>
     <h1>Bem-Vindo(a)</h1>
     <!--Exercicio 2- criar um botão que ao clicar mostra uma mensagem ao usuario-->
     <h2>Exercício 2</h2>
     <button onclick="exibirMensage()">Mostrar no console</button>
-    
+
     <!--Exercício 3- criar uma calculadora-->
     <h2>Exercício 3</h2>
     <button onclick="realizarCalculo()">Realizar calculo</button>
@@ -19,26 +21,26 @@
     <h3>Calculadora</h3>
     <button onclick="guardarOperacao('/')">/</button>
     <button onclick="limpar()">Limpar</button>
-    <br/>
+    <br />
     <button onclick="guardarNumero('7')">7</button>
     <button onclick="guardarNumero('8')">8</button>
     <button onclick="guardarNumero('9')">9</button>
     <button onclick="guardarOperacao('-')">-</button>
-    <br/>
+    <br />
     <button onclick="guardarNumero('4')">4</button>
     <button onclick="guardarNumero('5')">5</button>
     <button onclick="guardarNumero('6')">6</button>
     <button onclick="guardarOperacao('+')">+</button>
-    <br/>
+    <br />
     <button onclick="guardarNumero('1')">1</button>
     <button onclick="guardarNumero('2')">2</button>
     <button onclick="guardarNumero('3')">3</button>
     <button onclick="guardarOperacao('*')">*</button>
-    <br/>
+    <br />
     <button onclick="guardarNumero('.')">.</button>
     <button onclick="guardarNumero('0')">0</button>
     <button onclick="calcularComSwitch()">=</button>
-    <br>   
+    <br>
 
     <h2>Exercício 4</h2>
     <button onclick="identificarSonoUsuario()">Verifique seu sono aqui!</button>
@@ -69,13 +71,13 @@
     <h2>Exercício 12</h2>
     <button onclick="contarDezFor()">For conta</button>
     <button onclick="contarDezWhile()">While conta</button>
-    <br/>
+    <br />
     <button onclick="contarZeroFor()">Decrescente For</button>
     <button onclick="contarZeroWhile()">Decrescente While</button>
-    <br/>
+    <br />
     <button onclick="contarParFor()">Par For</button>
     <button onclick="contarParWhile()">Par While</button>
-    <br/>
+    <br />
     <button onclick="contarImparFor()">Impar For</button>
     <button onclick="contarImparWhile()">Impar While</button>
 
@@ -96,5 +98,20 @@
 
     <h2>Exercício 18</h2>
     <button onclick="contarLetras()">Contar letras</button>
+
+    <h2>Exercício 19</h2>
+    <button onclick="contandoClicks()">Contador</button>
+    <p id="resultado">0</p>
+
+    <h2>Exercício 20</h2>
+    <input type="password" placeholder="Informe sua senha" id="senha">
+    <div id="iconeSenha">
+        <svg onclick="visualizarSenha()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-eye" viewBox="0 0 16 16">
+            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+        </svg>
+    </div>
 </body>
+
 </html>
