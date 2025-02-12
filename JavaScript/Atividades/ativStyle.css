@@ -1,0 +1,11 @@
+.escondido {
+    visibility: hidden;
+}
+
+.cor-escondido {
+    color: red;
+}
+
+.cor-mostrar {
+    color: blue;
+}

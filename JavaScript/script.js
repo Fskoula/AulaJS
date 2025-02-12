@@ -82,3 +82,17 @@ function validarResultado() {
     }
 
 }
+
+function incluirTexto() {
+    const textoUsuario = document.getElementById('texto-usuario');
+    const conteudoTexto = document.getElementById('conteudo-texto');
+    const texto = document.createElement('p');
+    texto.innerText = textoUsuario.value;
+    conteudoTexto.appendChild(texto);
+    textoUsuario.value = '';
+}
+
+function limpar() {
+    const conteudoTexto = document.getElementById('conteudo-texto');
+    conteudoTexto.innerHTML = '';
+}
