@@ -503,3 +503,15 @@ function esconderMostrarTexto() {
         btMostraEsconde.classList.remove("cor-mostrar");
     }
 }
+
+//Usando Axios e Json para buscar dados
+function listarUsuarios() {
+    const listaUsuarios = document.getElementById('lista-usuarios');
+    axios.get('https://jsonplaceholder.typicode.com/users').then(retorno => {
+        retorno.data.forEach(usuario => {
+            const p = document.createElement('p');
+            p.innerText = usuario.name;
+            listaUsuarios.appendChild(p);
+        })
+    });
+}
