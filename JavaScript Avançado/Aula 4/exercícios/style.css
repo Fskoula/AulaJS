@@ -1,3 +1,15 @@
 body {
     background-color: rgb(220, 212, 202);
 }
+
+.retangulo {
+    height: 100px;
+    width: 200px;
+    background-color: pink;
+}
+
+.mudarQuadrado {
+    width: 100px;
+    border-radius: 5%;
+    background-color: blue;
+}
