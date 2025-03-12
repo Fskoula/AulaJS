@@ -114,9 +114,7 @@ document.querySelector(".buscar").addEventListener("click", () => {
             })
 })
 
-//Calculo do dolar
-
-//usando json
+//Calculo do dolar - usando json
 
 fetch(`https://economia.awesomeapi.com.br/json/last/USD-BRL`).then(resposta => resposta.json())
 .then (payload => document.querySelector(".dolar").value = payload.USDBRL.bid)
